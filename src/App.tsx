@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MembersList from './cmps/MembersList';
+import styles from './App.module.css';
+import * as designTokens from './designTokens';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const colorScheme = isDarkMode ? designTokens.colorScheme.dark : designTokens.colorScheme.light;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      id='App'
+      className={`${isDarkMode ? styles.darkMode : ''}`}
+      style={{ background: colorScheme.background, color: colorScheme.text }}
+    >
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+      <MembersList />
     </div>
   );
 }

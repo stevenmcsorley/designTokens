@@ -1,0 +1,75 @@
+/* MembersList.module.css */
+
+:root {
+    /* Colors */
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+  
+    /* Typography */
+    --typography-fontSize: 16px;
+  
+    /* Spacing */
+    --spacing-padding: 16px;
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+  
+    /* Inputs */
+    --inputs-height: 40px;
+    --inputs-borderRadius: 4px;
+    --inputs-borderWidth: 1px;
+    --inputs-borderColor: #ccc;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+  }
+  
+  .title {
+    color: var(--color-primary);
+    font-size: var(--typography-fontSize);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .input {
+    height: var(--inputs-height);
+    border-radius: var(--inputs-borderRadius);
+    border: var(--inputs-borderWidth) solid var(--inputs-borderColor);
+    padding: var(--spacing-small);
+    margin-bottom: var(--spacing-medium);
+    font-size: var(--typography-fontSize);
+  }
+  
+  .memberList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: var(--spacing-medium);
+  }
+  
+  .memberItem {
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--inputs-borderRadius);
+    padding: var(--spacing-medium);
+    text-align: center;
+  }
+  
+  .memberName {
+    color: var(--color-primary);
+    font-size: var(--typography-fontSize);
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .memberParty {
+    color: var(--color-secondary);
+    font-size: var(--typography-fontSize);
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .memberImage {
+    width: 100%;
+    height: auto;
+    border-radius: var(--inputs-borderRadius);
+  }
+  
